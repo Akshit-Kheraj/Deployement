@@ -86,6 +86,7 @@ cd $APP_DIR
 echo -e "${YELLOW}[8/10] Setting up Frontend...${NC}"
 cd $APP_DIR/MEDSTARGENX
 npm install
+echo "VITE_API_URL=/api" > .env
 npm run build
 echo "Frontend built successfully!"
 
