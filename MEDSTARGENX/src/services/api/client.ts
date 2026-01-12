@@ -30,12 +30,15 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
     (response) => response,
     (error) => {
-        // Handle 401 Unauthorized - Clear token but don't redirect
-        // This allows free navigation without forced login
+        // Handle 401 Unauthorized - Clear token and redirect to login
         if (error.response?.status === 401) {
             localStorage.removeItem(AUTH_CONFIG.tokenKey);
             localStorage.removeItem('refreshToken');
-            // Redirect removed - users can navigate freely
+
+            // Only redirect if not already on auth page
+            if (window.location.pathname !== '/auth') {
+                window.location.href = '/auth';
+            }
         }
 
         // Handle network errors
