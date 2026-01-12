@@ -4,6 +4,7 @@ module.exports = {
         {
             name: 'medstargenx-backend',
             script: '/var/www/medstargenx/MEDSTARGENX/backend/src/server.js',
+            cwd: '/var/www/medstargenx/MEDSTARGENX/backend',
             instances: 1,
             exec_mode: 'cluster',
             autorestart: true,
