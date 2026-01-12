@@ -6,9 +6,9 @@ After=network.target
 Type=simple
 User=www-data
 Group=www-data
-WorkingDirectory=/var/www/medstargenx/ml_api
-Environment="PATH=/var/www/medstargenx/venv/bin"
-ExecStart=/var/www/medstargenx/venv/bin/python /var/www/medstargenx/ml_api/cancer_api.py
+WorkingDirectory=/var/www/medstargenx/MEDSTARGENX/ml_api
+Environment="PATH=/var/www/medstargenx/MEDSTARGENX/venv/bin"
+ExecStart=/var/www/medstargenx/MEDSTARGENX/venv/bin/python /var/www/medstargenx/MEDSTARGENX/ml_api/cancer_api.py
 Restart=always
 RestartSec=10
 
