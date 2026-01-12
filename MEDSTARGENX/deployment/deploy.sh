@@ -25,7 +25,7 @@ echo ""
 # Configuration
 DOMAIN="mgenx.com"
 APP_DIR="/var/www/medstargenx"
-REPO_URL="https://github.com/Udham-makeithappen/MEDSTARGENX.git"
+REPO_URL="https://github.com/Akshit-Kheraj/Prediction.git"
 MONGODB_VERSION="7.0"
 
 # Step 1: System Update
