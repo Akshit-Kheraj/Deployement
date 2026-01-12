@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+@layer base {
+  :root {
+    /* Med Star Gen X - Premium Healthcare Theme */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Ocean Blue - Primary */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Midnight Professional */
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success/Benign - Medical Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning/Attention - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 45%;
+
+    --radius: 0.75rem;
+
+    /* Premium Theme Variables */
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 214 32% 91% / 0.5;
+    --glow-primary: 210 100% 45%;
+    --glow-accent: 199 89% 48%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 210 100% 55%;
+
+    --chart-1: 210 100% 45%;
+    --chart-2: 199 89% 48%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+
+    --sidebar: 0 0% 100%;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 2px 0px hsl(0 0% 0% / 0.03);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.04);
+    --shadow-sm: 0 2px 4px -1px hsl(0 0% 0% / 0.06), 0 1px 2px -1px hsl(0 0% 0% / 0.04);
+    --shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.07), 0 2px 4px -1px hsl(0 0% 0% / 0.04);
+    --shadow-md: 0 6px 12px -2px hsl(0 0% 0% / 0.08), 0 3px 6px -2px hsl(0 0% 0% / 0.04);
+    --shadow-lg: 0 10px 20px -3px hsl(0 0% 0% / 0.1), 0 4px 8px -2px hsl(0 0% 0% / 0.04);
+    --shadow-xl: 0 20px 40px -4px hsl(0 0% 0% / 0.12), 0 8px 16px -4px hsl(0 0% 0% / 0.04);
+    --shadow-2xl: 0 25px 50px -6px hsl(0 0% 0% / 0.15);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 210 100% 55%;
+    --chart-1: 210 100% 55%;
+    --chart-2: 199 89% 58%;
+    --chart-3: 142 76% 46%;
+    --chart-4: 38 92% 60%;
+    --chart-5: 0 84% 65%;
+    --sidebar: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 210 100% 55%;
+    --shadow-2xs: 0 1px 2px 0px hsl(0 0% 0% / 0.2);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --shadow-sm: 0 2px 4px -1px hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.2);
+    --shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.35), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 6px 12px -2px hsl(0 0% 0% / 0.4), 0 3px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 10px 20px -3px hsl(0 0% 0% / 0.45), 0 4px 8px -2px hsl(0 0% 0% / 0.2);
+    --shadow-xl: 0 20px 40px -4px hsl(0 0% 0% / 0.5), 0 8px 16px -4px hsl(0 0% 0% / 0.2);
+    --shadow-2xl: 0 25px 50px -6px hsl(0 0% 0% / 0.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Glassmorphism utilities */
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-sm;
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-2xl border border-border/30 shadow-lg;
+  }
+
+  .glass-panel {
+    @apply bg-gradient-to-br from-card to-card/80 backdrop-blur-xl border border-border/20;
+  }
+
+  /* Premium glow effects */
+  .glow-primary {
+    box-shadow: 0 0 30px -8px hsl(var(--primary) / 0.4),
+      0 0 60px -15px hsl(var(--primary) / 0.2);
+  }
+
+  .glow-primary-soft {
+    box-shadow: 0 0 40px -15px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+
+  /* Professional gradient backgrounds */
+  .gradient-radial {
+    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.08), transparent 60%);
+  }
+
+  .gradient-mesh {
+    background:
+      radial-gradient(at 40% 20%, hsl(var(--primary) / 0.06) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--glow-accent) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--primary) / 0.04) 0px, transparent 50%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, transparent 50%, hsl(var(--glow-accent) / 0.05) 100%);
+  }
+
+  /* Animations */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px -10px hsl(var(--secondary));
+    }
+
+    to {
+      box-shadow: 0 0 40px -10px hsl(var(--secondary));
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(var(--secondary) / 0.1) 50%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted/30 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-secondary/30 rounded-full hover:bg-secondary/50;
+  }
+}
+
+/* Print styles for patient reports */
+@media print {
+
+  /* Hide all navigation, buttons, and UI elements */
+  nav,
+  aside,
+  button,
+  .no-print,
+  [class*="sidebar"],
+  [class*="Sidebar"],
+  [class*="navigation"],
+  header,
+  footer {
+    display: none !important;
+  }
+
+  /* Reset page layout - remove margins from sidebar */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Ensure content fits on page */
+  .gradient-mesh {
+    background: white !important;
+  }
+
+  .glass-card {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Make charts print-friendly */
+  .recharts-wrapper {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure text is readable */
+  * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page breaks */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Remove animations and transitions */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Ensure full width for print */
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  /* Grid layout adjustments for print */
+  .grid {
+    display: block !important;
+  }
+
+  .grid>* {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Hide badges that are just UI chrome */
+  .badge {
+    border: 1px solid currentColor !important;
+    background: transparent !important;
+  }
+
+  /* Print header styling */
+  h1 {
+    font-size: 24pt !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Ensure patient info is visible */
+  p {
+    font-size: 11pt !important;
+  }
+
+  /* Hide browser's default print headers/footers (URL, date, page numbers) */
+  @page {
+    margin: 0.5in;
+  }
+
+  body {
+    margin: 0 !important;
+  }
+
+  /* Show print-only elements */
+  .print\:block {
+    display: block !important;
+  }
+
+  /* Style the print header */
+  .print\:block h1 {
+    color: #1e40af !important;
+    font-size: 20pt !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .print\:block p {
+    font-size: 10pt !important;
+    color: #6b7280 !important;
+  }
+}

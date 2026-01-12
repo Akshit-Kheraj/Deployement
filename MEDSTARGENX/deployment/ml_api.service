@@ -1,0 +1,21 @@
+[Unit]
+Description=MEDSTARGENX ML API Service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/medstargenx/ml_api
+Environment="PATH=/var/www/medstargenx/venv/bin"
+ExecStart=/var/www/medstargenx/venv/bin/python /var/www/medstargenx/ml_api/cancer_api.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=medstargenx-ml
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,337 @@
+Patient_ID,Age,Sex,CBC_Hb_g_dL,CBC_RBC_million_uL,CBC_WBC_10^9_L,CBC_Platelets_10^9_L,ALT_U_L,AST_U_L,ALP_U_L,Total_Bilirubin_mg_dL,Creatinine_mg_dL,Urea_mg_dL,Ferritin_ng_mL,CRP_mg_L,qPCR_Value,Biopsy_Result,CT_Scan_Findings,MRI_Findings,Tumor_Marker_Test,Specific_Genetic_Test,Specific_Diagnosis,Drug and Dose Suggestions,Predicted_Response_Probability,Pharmacogenomic_Status,Predicted_Toxicity_Type,ADRs,Contraindications,Predicted_Resistance_Type,Resistance_Management_Action,Monitoring_Alert,Dose_Adjustment_Recommendation,Clinical_Action_Alert
+P001,71,Female,12,7.3,2.4,366,45,21,303,3.81,0.85,29,1086,6.8,High copy,Inflammatory,Mass lesion,Normal,Normal,TP53 mutation,NSCLC,"Osimertinib (mono)
+80 mg PO daily",0.85,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Cardiac (QT), Pulmonary (ILD)","Diarrhea, rash","QT prolongation, ILD",Primary resistance,Add combination therapy,Weekly CBC,Dose reduction,Escalate care
+P002,62,Male,12.1,4.03,5.9,411,35,88,126,1.88,2.8,95,1132,47.9,Low copy,Benign,Normal,White matter changes,CEA elevated,TP53 mutation,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",poor marrow reserve,Primary resistance,Dose escalation,qPCR surveillance,Temporary hold,Escalate care
+P003,54,Female,11.3,6.39,2.2,182,112,119,180,3.74,0.95,30,501,79.5,Negative,Benign,Organomegaly,White matter changes,CEA elevated,TP53 mutation,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiac (QT),Myelosuppression,Baseline QTc >480 ms,Primary resistance,Add combination therapy,qPCR surveillance,Standard dose,Continue treatment
+P004,69,Female,14,7.09,9.3,374,49,131,304,1.41,1.58,73,311,24.3,Low copy,Benign,Organomegaly,White matter changes,AFP elevated,BCR-ABL+,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",poor marrow reserve,Secondary mutation,Switch drug class,qPCR surveillance,Dose reduction,Continue treatment
+P005,32,Male,12.4,4.53,16.4,421,160,50,143,0.31,1.65,68,97,18.7,Positive,Fibrotic,Organomegaly,Lesion detected,CEA elevated,Normal,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,JAK2 V617F mutation ? predicts strong response to ruxolitinib,"Bleeding, Hematologic","Bruising, anemia",Active bleeding,Secondary mutation,Enhanced monitoring,LFT monitoring,Dose reduction,Escalate care
+P007,26,Male,10.1,4.78,16.1,288,99,129,188,1.33,0.85,22,26,69.1,Low copy,Malignant,Lymphadenopathy,White matter changes,CA-125 elevated,JAK2-,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Secondary mutation,Switch drug class,qPCR surveillance,Dose reduction,Continue treatment
+P009,24,Male,12.2,5.76,4.8,199,12,72,237,2.53,2.71,111,929,35.2,Negative,Inflammatory,Mass lesion,Normal,Normal,Normal,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiac (QT),Myelosuppression,Baseline QTc >480 ms,Secondary mutation,Switch drug class,LFT monitoring,Standard dose,Hold drug
+P011,75,Male,7.9,7.17,12.7,141,76,45,125,4.81,1.36,112,790,58,High copy,Benign,Mass lesion,Lesion detected,Normal,BCR-ABL+,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,Secondary mutation,Enhanced monitoring,Weekly CBC,Temporary hold,Hold drug
+P013,29,Female,11.2,5.67,8.4,142,24,115,369,1.21,3.48,102,1008,77.5,Low copy,Malignant,Mass lesion,White matter changes,CEA elevated,BCR-ABL+,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiac(QT),Myelosuppression,Baseline QTc >480 ms,Primary resistance,Add combination therapy,qPCR surveillance,Temporary hold,Continue treatment
+P014,28,Female,12.9,4.44,9.1,113,54,126,383,1.04,1.43,76,1148,46.1,Positive,Malignant,Organomegaly,White matter changes,Normal,Normal,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Primary resistance,Switch drug class,Imaging follow-up,Standard dose,Hold drug
+P015,72,Female,9.2,6.71,9.3,224,180,169,128,4.14,2.18,68,1131,55.6,Negative,Inflammatory,Lymphadenopathy,White matter changes,AFP elevated,BCR-ABL+,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Primary resistance,Dose escalation,qPCR surveillance,Temporary hold,Escalate care
+P016,36,Female,10.7,5.68,12.7,343,170,129,281,3.56,1.36,88,444,48,Negative,Benign,Mass lesion,Normal,AFP elevated,EGFR+,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,No resistance predicted,Dose escalation,Weekly CBC,Standard dose,Hold drug
+P017,33,Male,9.7,5.2,4.8,166,88,83,157,1.94,0.82,79,202,6.9,Low copy,Fibrotic,Lymphadenopathy,White matter changes,CA-125 elevated,TP53 mutation,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,Myelosuppression,Baseline QTc >480 ms,Secondary mutation,Dose escalation,qPCR surveillance,Standard dose,Hold drug
+P018,18,Male,10.9,7.15,6.4,111,120,10,395,2.4,1.39,107,215,49,High copy,Malignant,Organomegaly,Normal,Normal,Normal,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,Myelosuppression,Baseline QTc >480 ms,Primary resistance,Switch drug class,LFT monitoring,Standard dose,Continue treatment
+P019,64,Female,13.9,5.95,10,503,135,72,118,1.74,2.5,86,110,50.9,High copy,Inflammatory,Organomegaly,Lesion detected,AFP elevated,JAK2-,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Pathway bypass,Enhanced monitoring,LFT monitoring,Temporary hold,Continue treatment
+P020,68,Female,8.3,3.32,12.7,550,167,24,396,2.95,1.17,67,823,36.3,Positive,Malignant,Normal,White matter changes,Normal,Normal,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,Pathway bypass,Dose escalation,qPCR surveillance,Standard dose,Continue treatment
+P021,48,Male,11.9,4.88,7.8,461,74,110,221,1,1.31,51,570,37.2,Low copy,Inflammatory,Normal,Lesion detected,AFP elevated,Normal,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Primary resistance,Dose escalation,LFT monitoring,Standard dose,Escalate care
+P023,63,Male,14.9,6.87,4.3,561,128,140,378,2.74,2.87,101,179,54.7,Negative,Malignant,Organomegaly,Lesion detected,CA-125 elevated,BCR-ABL+,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,No resistance predicted,Switch drug class,Imaging follow-up,Standard dose,Escalate care
+P027,31,Male,9.5,5.65,12.5,503,11,12,124,4.41,2.25,77,302,64,Low copy,Inflammatory,Mass lesion,Lesion detected,CA-125 elevated,Normal,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",Poor marrow reserve,Primary resistance,Dose escalation,qPCR surveillance,Dose reduction,Multidisciplinary review
+P028,58,Female,10.3,6.47,14.3,240,64,165,149,0.31,3.43,51,420,42.7,Positive,Benign,Mass lesion,White matter changes,CA-125 elevated,Normal,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Secondary mutation,Switch drug class,Imaging follow-up,Standard dose,Continue treatment
+P029,23,Male,12.3,3.86,5.5,103,147,81,191,3.12,2.68,23,177,10.7,Positive,Malignant,Organomegaly,White matter changes,CA-125 elevated,EGFR+,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²",0.9,"HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Cardiac, Hematologic",LVEF <50%,Secondary mutation,Add combination therapy,qPCR surveillance,Standard dose,Continue treatment
+P031,36,Male,12.5,6.32,2.6,226,63,108,389,4.76,1.59,102,988,76.9,Low copy,Malignant,Mass lesion,Normal,CA-125 elevated,JAK2-,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,No resistance predicted,Switch drug class,Imaging follow-up,Standard dose,Multidisciplinary review
+P032,67,Female,13.9,5.1,16.9,157,19,147,180,0.45,1.34,26,720,47.1,Negative,Inflammatory,Normal,White matter changes,CA-125 elevated,TP53 mutation,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,Pathway bypass,Switch drug class,Imaging follow-up,Temporary hold,Continue treatment
+P033,20,Female,15.8,7.25,3.7,155,152,142,138,2.89,3,118,1032,14.6,Negative,Fibrotic,Lymphadenopathy,Lesion detected,AFP elevated,Normal,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,No resistance predicted,Add combination therapy,Weekly CBC,Standard dose,Continue treatment
+P034,58,Male,7.7,5.38,3.9,353,151,118,354,2.44,2.07,79,1179,75.1,High copy,Fibrotic,Mass lesion,Normal,CEA elevated,TP53 mutation,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,Secondary mutation,Dose escalation,qPCR surveillance,Standard dose,Hold drug
+P036,44,Female,15.4,7.04,4.8,163,20,152,143,4.41,1.77,10,719,3.3,Low copy,Malignant,Lymphadenopathy,Normal,AFP elevated,BCR-ABL+,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,Primary resistance,Add combination therapy,qPCR surveillance,Temporary hold,Escalate care
+P037,44,Female,8.1,6.44,9.3,287,46,113,343,4.67,2.53,120,1099,19.2,Positive,Malignant,Organomegaly,White matter changes,CA-125 elevated,EGFR+,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Bleeding, Hematologic","Bruising, anemia",Active bleeding,No resistance predicted,Enhanced monitoring,Weekly CBC,Standard dose,Escalate care
+P038,69,Female,10.2,4.5,2.2,495,44,43,234,2.44,2.36,69,75,24.9,Negative,Malignant,Mass lesion,White matter changes,CA-125 elevated,TP53 mutation,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,Secondary mutation,Enhanced monitoring,LFT monitoring,Temporary hold,Escalate care
+P039,69,Male,12.6,6.39,8.1,523,75,93,278,2,1.76,115,886,60.1,Positive,Benign,Normal,Normal,AFP elevated,EGFR+,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",Poor marrow reserve,No resistance predicted,Enhanced monitoring,qPCR surveillance,Standard dose,Multidisciplinary review
+P040,47,Male,16,6.51,9,206,27,23,124,1.66,0.81,74,84,46.1,Positive,Malignant,Organomegaly,White matter changes,AFP elevated,EGFR+,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²",0.9,"HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Cardiac, Hematologic",LVEF <50%,Primary resistance,Dose escalation,qPCR surveillance,Dose reduction,Multidisciplinary review
+P041,32,Male,12.4,4.59,4.5,498,66,119,95,0.88,3.23,34,941,70.4,High copy,Malignant,Normal,White matter changes,CA-125 elevated,EGFR+,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²",0.9,"HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Diarrhea, neutropenia",LVEF <50%,Primary resistance,Switch drug class,Weekly CBC,Temporary hold,Hold drug
+P042,46,Male,12,4.27,17.2,528,56,54,319,3.61,2.07,94,847,70.1,Negative,Fibrotic,Lymphadenopathy,Normal,CA-125 elevated,Normal,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",Poor marrow reserve,Secondary mutation,Switch drug class,Imaging follow-up,Standard dose,Continue treatment
+P044,22,Female,10.9,6.64,12.6,592,64,118,335,0.97,2.73,35,750,59,High copy,Fibrotic,Organomegaly,Normal,CA-125 elevated,Normal,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.","Hematologic, Cardiac","Myelosuppression, fatigue",Poor marrow reserve,No resistance predicted,Switch drug class,Weekly CBC,Standard dose,Hold drug
+P045,41,Male,7.2,3.76,12.4,182,173,116,301,2.9,1.99,10,549,44.5,High copy,Benign,Organomegaly,Lesion detected,AFP elevated,TP53 mutation,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Pathway bypass,Dose escalation,Weekly CBC,Standard dose,Continue treatment
+P046,23,Female,7.4,7.42,14.2,464,134,65,95,4.18,2.67,51,620,11.3,Low copy,Malignant,Normal,Lesion detected,CA-125 elevated,JAK2-,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,No resistance predicted,Enhanced monitoring,Weekly CBC,Standard dose,Continue treatment
+P047,55,Male,8,6.27,7.1,109,92,19,231,2.26,1.01,83,863,74.1,Low copy,Fibrotic,Lymphadenopathy,Normal,Normal,EGFR+,CML,,0.89,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Low toxicity risk,,,Primary resistance,Dose escalation,Weekly CBC,Temporary hold,Continue treatment
+P048,58,Female,14.7,6.32,17.9,191,126,126,202,2.66,3.13,25,22,31.9,Negative,Fibrotic,Organomegaly,Normal,Normal,EGFR+,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,No resistance predicted,Enhanced monitoring,Imaging follow-up,Dose reduction,Continue treatment
+P050,57,Female,9.9,5.08,11.8,105,142,145,93,4.23,1.77,43,1031,68.9,Negative,Benign,Organomegaly,Normal,AFP elevated,BCR-ABL+,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Secondary mutation,Add combination therapy,Weekly CBC,Temporary hold,Escalate care
+P051,69,Male,10.8,5.93,16,139,32,52,317,0.89,0.7,34,613,69.1,Negative,Benign,Normal,Lesion detected,CA-125 elevated,BCR-ABL+,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²","0,90","HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Diarrhea, neutropenia",LVEF <50%,Secondary mutation,Add combination therapy,Weekly CBC,Temporary hold,Continue treatment
+P052,33,Male,15.4,7.18,10.6,166,38,142,293,3.63,1.48,67,834,58.5,Negative,Benign,Lymphadenopathy,Lesion detected,CA-125 elevated,Normal,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Hematologic, Cardiac","Bruising, anemia",Active bleeding,Pathway bypass,Enhanced monitoring,Imaging follow-up,Dose reduction,Escalate care
+P053,37,Female,11.8,4.42,10.1,573,165,20,109,0.36,2.08,27,1140,79.1,Positive,Benign,Lymphadenopathy,White matter changes,CEA elevated,BCR-ABL+,Iron Deficiency Anemia,cisplatin,0.45,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",Cardiotoxicity,,,Pathway bypass,Add combination therapy,Imaging follow-up,Standard dose,Continue treatment
+P054,74,Female,15.1,5.91,17.5,72,112,24,49,2.87,2.04,20,38,50.6,Low copy,Inflammatory,Mass lesion,Lesion detected,CEA elevated,TP53 mutation,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.",Low toxicity risk,"Myelosuppression, fatigue",Poor marrow reserve,Primary resistance,Dose escalation,Imaging follow-up,Temporary hold,Continue treatment
+P055,70,Female,11.9,3.25,12.1,450,57,102,375,4.96,1.6,46,321,54.9,Positive,Fibrotic,Normal,White matter changes,AFP elevated,TP53 mutation,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Hematologic, Cardiac","Bruising, anemia",Active bleeding,Primary resistance,Enhanced monitoring,Imaging follow-up,Temporary hold,Multidisciplinary review
+P057,26,Male,15.9,3.59,5.8,524,17,98,321,0.84,0.86,41,1056,64.4,Positive,Fibrotic,Mass lesion,Lesion detected,Normal,BCR-ABL+,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Primary resistance,Dose escalation,LFT monitoring,Temporary hold,Escalate care
+P059,47,Male,15.7,3.05,10,579,107,29,391,2.12,1.1,12,211,75.6,Negative,Inflammatory,Normal,Lesion detected,AFP elevated,JAK2-,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²",0.9,"HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Diarrhea, neutropenia",LVEF <50%,Primary resistance,Switch drug class,LFT monitoring,Standard dose,Escalate care
+P060,53,Female,7.2,6.54,8.4,561,113,10,359,0.81,2.14,114,1017,59.2,Low copy,Inflammatory,Lymphadenopathy,Normal,AFP elevated,BCR-ABL+,Breast Cancer,"Trastuzumab + Pertuzumab + Docetaxel
+Trastuzumab 8?6 mg/kg q3wk + Pertuzumab 840?420 mg + Docetaxel 75 mg/m²",0.9,"HER2 (ERBB2) amplification ? predicts strong response to trastuzumab/pertuzumab.
+
+FCGR3A polymorphisms ? may affect antibody-dependent cellular cytotoxicity and efficacy.
+
+CYP3A4/3A5 variants ? influence docetaxel metabolism and toxicity risk.","Cardiac, Hematologic","Diarrhea, neutropenia",LVEF <50%,Secondary mutation,Switch drug class,LFT monitoring,Dose reduction,Continue treatment
+P062,57,Female,8.5,4.5,4.3,275,31,165,70,1.35,2.84,94,175,50.8,High copy,Benign,Lymphadenopathy,Lesion detected,Normal,TP53 mutation,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,Secondary mutation,Switch drug class,Weekly CBC,Temporary hold,Hold drug
+P064,59,Male,9.9,7.49,3.5,359,23,72,131,1.05,1.31,71,862,22.3,High copy,Benign,Mass lesion,White matter changes,AFP elevated,EGFR+,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Pathway bypass,Dose escalation,LFT monitoring,Temporary hold,Continue treatment
+P065,27,Female,12,5.02,8.5,186,151,47,251,0.76,0.83,111,725,47.6,Negative,Inflammatory,Organomegaly,Lesion detected,Normal,BCR-ABL+,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Secondary mutation,Add combination therapy,LFT monitoring,Standard dose,Escalate care
+P067,71,Male,8.3,3.98,10.7,110,152,155,140,4.25,1.85,105,451,4.1,Positive,Fibrotic,Normal,Normal,CA-125 elevated,TP53 mutation,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Pathway bypass,Enhanced monitoring,Weekly CBC,Dose reduction,Continue treatment
+P068,55,Female,7.5,4.52,9.9,65,32,56,312,2.6,0.91,55,48,17,Negative,Inflammatory,Normal,Lesion detected,CA-125 elevated,JAK2-,AML,"Quizartinib + chemo
+30–60 mg PO daily + standard induction",0.78,"FLT3-ITD mutation ? strong target dependence and improved response.
+
+FLT3 allelic ratio (high burden) ? predicts greater benefit from quizartinib.
+
+CYP3A4 variants / strong CYP3A4 inhibitors ? increased drug levels and QT-toxicity risk.",Cardiotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,Secondary mutation,Enhanced monitoring,qPCR surveillance,Temporary hold,Hold drug
+P069,34,Male,7.3,5.33,16.8,85,158,15,362,2.77,2.87,53,880,16.8,Negative,Inflammatory,Mass lesion,White matter changes,CEA elevated,EGFR+,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Pathway bypass,Dose escalation,LFT monitoring,Dose reduction,Continue treatment
+P071,21,Female,9.9,4.5,13.7,159,93,153,85,0.83,1.6,102,717,34.7,Negative,Fibrotic,Organomegaly,White matter changes,AFP elevated,EGFR+,Iron Deficiency Anemia,"Ferrous sulfate + Vitamin C
+Iron dose + Vit C 250–500 mg/day",0.75,"TMPRSS6 variants ? may reduce hepcidin suppression and iron absorption.
+
+DMT1 (SLC11A2) transporter variants ? influence intestinal iron uptake.
+
+HFE gene mutations (C282Y, H63D) ? affect iron storage and risk of overload.",GI upset,GI,Peptic ulcer,Pathway bypass,Add combination therapy,Imaging follow-up,Dose reduction,Escalate care
+P072,72,Male,7.3,5.24,4.7,426,123,110,154,1.73,3.22,70,814,12.9,Positive,Malignant,Mass lesion,White matter changes,AFP elevated,JAK2-,NSCLC,"Osimertinib + Platinum + Pemetrexed
+Osimertinib 80 mg daily + Carboplatin AUC 5 + Pemetrexed 500 mg/m² q3wk",0.88,"EGFR exon 19 deletion / L858R ? high sensitivity and clinical response.
+
+EGFR T790M ? retained efficacy in acquired TKI resistance.
+
+CYP3A4/3A5 variants or strong inducers ? reduced drug exposure and efficacy.",Nephrotoxicity,"Myelosuppression, fatigue",Poor marrow reserve,Primary resistance,Dose escalation,Imaging follow-up,Dose reduction,Escalate care
+P073,21,Male,7.9,5.73,15,478,152,152,100,1.17,0.87,63,82,29.5,Low copy,Inflammatory,Organomegaly,Lesion detected,AFP elevated,JAK2-,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Hematologic, Cardiac","Bruising, anemia",Active bleeding,Pathway bypass,Dose escalation,Weekly CBC,Temporary hold,Continue treatment
+P074,22,Male,10.2,4.07,10.5,427,103,124,89,1.93,3.47,113,155,40.4,Low copy,Inflammatory,Lymphadenopathy,Normal,CA-125 elevated,TP53 mutation,CML,"Asciminib (STAMP inhibitor)
+40 mg PO BID",0.9,"BCR-ABL1–positive CML ? high specificity for ABL myristoyl pocket (active even after TKI resistance).
+
+BCR-ABL1 T315I mutation ? retains activity where most TKIs fail.
+
+CYP3A4 metabolism / transporter variants (P-gp) ? altered exposure affecting efficacy and toxicity.",Pancreatic,"Fatigue, ?lipase",Pancreatitis,Secondary mutation,Enhanced monitoring,Imaging follow-up,Temporary hold,Continue treatment
+P075+R75AA51A75:S76A75:A75:S76,38,Female,8.7,3.85,17.1,81,28,135,84,1.02,3.15,69,144,22,Positive,Malignant,Normal,White matter changes,CEA elevated,Normal,Polycythemia Vera,"Ruxolitinib + Phlebotomy + Aspirin
+10 mg BID + target Hct <45% + ASA 75–100 mg",0.88,"JAK2 V617F mutation ? predicts strong response to ruxolitinib.
+
+CYP3A4/3A5 metabolism variants ? can alter drug levels and risk of hematologic toxicity.
+
+High-risk thrombophilia genotypes ? may influence aspirin prophylaxis effectiveness.","Hematologic, Cardiac","Bruising, anemia",Active bleeding,Secondary mutation,Dose escalation,Imaging follow-up,Standard dose,Multidisciplinary review
