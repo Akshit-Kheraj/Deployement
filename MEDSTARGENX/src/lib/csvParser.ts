@@ -6,7 +6,7 @@ export const parseCSV = async (file: File): Promise<Patient[]> => {
     const formData = new FormData();
     formData.append('file', file);
 
-    const response = await fetch('http://localhost:5001/api/predict', {
+    const response = await fetch(import.meta.env.VITE_ML_API_URL || 'http://localhost:5001/api/predict', {
       method: 'POST',
       body: formData,
     });

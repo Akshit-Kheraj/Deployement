@@ -87,6 +87,7 @@ echo -e "${YELLOW}[8/10] Setting up Frontend...${NC}"
 cd $APP_DIR/MEDSTARGENX
 npm install
 echo "VITE_API_URL=/" > .env
+echo "VITE_ML_API_URL=/ml/api/predict" >> .env
 npm run build
 echo "Frontend built successfully!"
 
