@@ -25,7 +25,7 @@ echo ""
 # Configuration
 DOMAIN="mgenx.com"
 APP_DIR="/var/www/medstargenx"
-REPO_URL="https://github.com/Akshit-Kheraj/Prediction.git"
+REPO_URL="https://github.com/Akshit-Kheraj/Deployement.git"
 MONGODB_VERSION="7.0"
 
 export DEBIAN_FRONTEND=noninteractive
