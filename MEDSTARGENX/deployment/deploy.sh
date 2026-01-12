@@ -113,7 +113,7 @@ echo "Backend .env created!"
 # Start backend with PM2
 cd $APP_DIR/MEDSTARGENX
 sudo mkdir -p /var/log/medstargenx
-pm2 start deployment/ecosystem.config.js
+pm2 start $APP_DIR/MEDSTARGENX/deployment/ecosystem.config.cjs
 pm2 save
 
 # Step 10: Setup ML API
