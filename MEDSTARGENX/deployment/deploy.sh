@@ -84,13 +84,14 @@ cd $APP_DIR
 
 # Step 8: Setup Frontend
 echo -e "${YELLOW}[8/10] Setting up Frontend...${NC}"
+cd $APP_DIR/MEDSTARGENX
 npm install
 npm run build
 echo "Frontend built successfully!"
 
 # Step 9: Setup Backend
 echo -e "${YELLOW}[9/10] Setting up Backend...${NC}"
-cd $APP_DIR/backend
+cd $APP_DIR/MEDSTARGENX/backend
 npm install
 
 # Create backend .env file
@@ -117,7 +118,7 @@ pm2 save
 
 # Step 10: Setup ML API
 echo -e "${YELLOW}[10/10] Setting up ML API...${NC}"
-cd $APP_DIR
+cd $APP_DIR/MEDSTARGENX
 python3.12 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
@@ -125,14 +126,14 @@ cd ml_api
 pip install -r requirements.txt
 
 # Copy systemd service
-sudo cp $APP_DIR/deployment/ml_api.service /etc/systemd/system/
+sudo cp $APP_DIR/MEDSTARGENX/deployment/ml_api.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl start ml_api
 sudo systemctl enable ml_api
 
 # Configure Nginx
 echo -e "${YELLOW}Configuring Nginx...${NC}"
-sudo cp $APP_DIR/deployment/nginx.conf /etc/nginx/sites-available/medstargenx
+sudo cp $APP_DIR/MEDSTARGENX/deployment/nginx.conf /etc/nginx/sites-available/medstargenx
 sudo ln -sf /etc/nginx/sites-available/medstargenx /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t
