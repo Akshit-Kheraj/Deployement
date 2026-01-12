@@ -111,7 +111,7 @@ EOF
 echo "Backend .env created!"
 
 # Start backend with PM2
-cd $APP_DIR
+cd $APP_DIR/MEDSTARGENX
 sudo mkdir -p /var/log/medstargenx
 pm2 start deployment/ecosystem.config.js
 pm2 save
