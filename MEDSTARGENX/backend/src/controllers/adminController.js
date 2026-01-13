@@ -166,6 +166,55 @@ const rejectUser = async (req, res) => {
 };
 
 /**
+ * @desc    Delete any user (including approved users)
+ * @route   DELETE /api/admin/delete-user/:id
+ * @access  Private/Admin
+ */
+const deleteUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found',
+            });
+        }
+
+        // Prevent admin from deleting themselves
+        if (user._id.toString() === req.user.id) {
+            return res.status(400).json({
+                success: false,
+                message: 'You cannot delete your own account',
+            });
+        }
+
+        // Prevent deleting other admins
+        if (user.role === 'admin') {
+            return res.status(400).json({
+                success: false,
+                message: 'Cannot delete admin users',
+            });
+        }
+
+        // Delete the user
+        await User.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({
+            success: true,
+            message: 'User deleted successfully. They will need to sign up again to regain access.',
+        });
+    } catch (error) {
+        console.error('Delete user error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error deleting user',
+            error: error.message,
+        });
+    }
+};
+
+/**
  * @desc    Get admin dashboard statistics
  * @route   GET /api/admin/stats
  * @access  Private/Admin
@@ -205,5 +254,6 @@ module.exports = {
     getAllUsers,
     approveUser,
     rejectUser,
+    deleteUser,
     getStats,
 };

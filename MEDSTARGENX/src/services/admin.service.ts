@@ -87,6 +87,14 @@ const adminService = {
     },
 
     /**
+     * Delete a user (including approved users)
+     */
+    deleteUser: async (userId: string): Promise<AdminActionResponse> => {
+        const response = await apiClient.delete<AdminActionResponse>(`/api/admin/delete-user/${userId}`);
+        return response.data;
+    },
+
+    /**
      * Get admin dashboard statistics
      */
     getStats: async (): Promise<AdminStats> => {

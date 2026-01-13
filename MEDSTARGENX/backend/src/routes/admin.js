@@ -5,6 +5,7 @@ const {
     getAllUsers,
     approveUser,
     rejectUser,
+    deleteUser,
     getStats,
 } = require('../controllers/adminController');
 const { protect } = require('../middleware/auth');
@@ -20,6 +21,7 @@ router.get('/users', getAllUsers);
 router.put('/approve-user/:id', approveUser);
 router.put('/reject-user/:id', rejectUser);
 router.delete('/reject-user/:id', rejectUser); // Also support DELETE method
+router.delete('/delete-user/:id', deleteUser); // Delete any user (including approved)
 router.get('/stats', getStats);
 
 module.exports = router;

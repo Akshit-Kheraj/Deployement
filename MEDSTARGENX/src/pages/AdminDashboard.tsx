@@ -119,6 +119,29 @@ const AdminDashboard = () => {
         }
     };
 
+    const handleDelete = async (userId: string) => {
+        try {
+            setActionLoading(userId);
+            await adminService.deleteUser(userId);
+
+            toast({
+                title: 'Success',
+                description: 'User deleted successfully. They will need to sign up again to regain access.',
+            });
+
+            // Reload data
+            await loadData();
+        } catch (error: any) {
+            toast({
+                title: 'Error',
+                description: error.response?.data?.message || 'Failed to delete user',
+                variant: 'destructive',
+            });
+        } finally {
+            setActionLoading(null);
+        }
+    };
+
     const StatCard = ({
         title,
         value,
@@ -184,6 +207,19 @@ const AdminDashboard = () => {
                             >
                                 <UserX className="w-4 h-4 mr-1" />
                                 Reject
+                            </Button>
+                        </div>
+                    )}
+                    {!showActions && user.isApproved && user.role !== 'admin' && (
+                        <div className="flex gap-2">
+                            <Button
+                                size="sm"
+                                variant="destructive"
+                                onClick={() => handleDelete(user._id)}
+                                disabled={actionLoading === user._id}
+                            >
+                                <UserX className="w-4 h-4 mr-1" />
+                                Delete
                             </Button>
                         </div>
                     )}
