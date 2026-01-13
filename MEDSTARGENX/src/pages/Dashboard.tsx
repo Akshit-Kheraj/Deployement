@@ -28,6 +28,13 @@ const Dashboard = () => {
       console.error('Error saving patients:', error);
       console.error('Error message:', error.message);
       console.error('Error response:', error.response);
+
+      // Check if it's a 401 error - redirect to login
+      if (error.response?.status === 401) {
+        window.location.href = '/auth';
+        return;
+      }
+
       toast({
         title: "Warning",
         description: error.message || "Predictions displayed but not saved to database",
