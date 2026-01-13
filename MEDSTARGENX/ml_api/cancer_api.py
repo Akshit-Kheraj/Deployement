@@ -31,8 +31,7 @@ CORS(app, resources={
             "https://mgenx.com",
             "http://mgenx.com",
             "https://www.mgenx.com",
-            "http://www.mgenx.com",
-            "http://72.62.241.114"
+            "http://www.mgenx.com"
         ],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]

@@ -25,16 +25,7 @@ app.use(helmet());
 // CORS configuration
 app.use(
     cors({
-        origin: [
-            process.env.FRONTEND_URL,
-            'http://localhost:8080',
-            'http://localhost:5173',
-            'http://72.62.241.114',
-            'http://mgenx.com',
-            'https://mgenx.com',
-            'http://www.mgenx.com',
-            'https://www.mgenx.com'
-        ],
+        origin: process.env.FRONTEND_URL || 'http://localhost:8080',
         credentials: true,
     })
 );

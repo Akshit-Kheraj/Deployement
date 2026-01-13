@@ -18,7 +18,7 @@ ssh root@72.62.241.114
 ### 2. Run Deployment Script
 ```bash
 # Download and run the deployment script
-curl -o deploy.sh https://raw.githubusercontent.com/Akshit-Kheraj/Deployement/main/MEDSTARGENX/deployment/deploy.sh
+curl -o deploy.sh https://raw.githubusercontent.com/Udham-makeithappen/MEDSTARGENX/main/deployment/deploy.sh
 chmod +x deploy.sh
 sudo ./deploy.sh
 ```
@@ -71,7 +71,7 @@ sudo npm install -g pm2
 ```bash
 sudo mkdir -p /var/www/medstargenx
 cd /var/www
-sudo fit clone https://github.com/Akshit-Kheraj/Deployement.git medstargenx
+sudo git clone https://github.com/Udham-makeithappen/MEDSTARGENX.git medstargenx
 cd medstargenx
 ```
 
