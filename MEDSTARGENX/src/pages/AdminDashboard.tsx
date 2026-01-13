@@ -18,7 +18,8 @@ import {
     User as UserIcon,
     CheckCircle,
     XCircle,
-    Activity
+    Activity,
+    Shield
 } from 'lucide-react';
 
 const AdminDashboard = () => {
@@ -172,8 +173,10 @@ const AdminDashboard = () => {
                         <CardTitle className="text-lg">{user.name}</CardTitle>
                         <CardDescription className="mt-1">{user.email}</CardDescription>
                         <div className="flex gap-2 mt-3">
-                            <Badge variant={user.userType === 'doctor' ? 'default' : 'secondary'}>
-                                {user.userType === 'doctor' ? (
+                            <Badge variant={user.role === 'admin' ? 'destructive' : (user.userType === 'doctor' ? 'default' : 'secondary')}>
+                                {user.role === 'admin' ? (
+                                    <><Shield className="w-3 h-3 mr-1" /> Admin</>
+                                ) : user.userType === 'doctor' ? (
                                     <><Stethoscope className="w-3 h-3 mr-1" /> Doctor</>
                                 ) : (
                                     <><UserIcon className="w-3 h-3 mr-1" /> Patient</>
