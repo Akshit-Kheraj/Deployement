@@ -210,30 +210,6 @@ const Auth = () => {
             </p>
           </div>
 
-          {/* Demo Credentials */}
-          {!isSignUp && (
-            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-900">
-              <div className="flex items-start gap-2 mb-2">
-                <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5" />
-                <div className="flex-1">
-                  <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Demo Credentials for Testing</h4>
-                  <div className="space-y-2 text-sm text-blue-800 dark:text-blue-200">
-                    <div>
-                      <p className="font-medium">Admin Account:</p>
-                      <p>Email: <code className="bg-blue-100 dark:bg-blue-900/50 px-1 rounded">admin@medstargenx.com</code></p>
-                      <p>Password: <code className="bg-blue-100 dark:bg-blue-900/50 px-1 rounded">Admin@123</code></p>
-                    </div>
-                    <div className="border-t border-blue-200 dark:border-blue-800 pt-2">
-                      <p className="font-medium">Doctor Account (Pending Approval):</p>
-                      <p>Email: <code className="bg-blue-100 dark:bg-blue-900/50 px-1 rounded">doctor@medstargenx.com</code></p>
-                      <p>Password: <code className="bg-blue-100 dark:bg-blue-900/50 px-1 rounded">Doctor@123</code></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             {isSignUp && (
