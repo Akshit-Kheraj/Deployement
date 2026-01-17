@@ -8,6 +8,22 @@ export interface Patient {
   bloodType: string;
   riskScore: number;
   status: 'Malignant' | 'Benign' | 'Under Review';
+  prediction?: 'Cancer' | 'Non-Cancer';
+  riskCategory?: 'Low Risk' | 'Moderate Risk' | 'High Risk' | 'Very High Risk';
+
+  // Clinical Prediction Fields
+  drugAndDoseSuggestions?: string;
+  predictedResponseProbability?: number;
+  pharmacogenomicStatus?: string;
+  predictedToxicityType?: string;
+  adrs?: string;
+  contraindications?: string;
+  predictedResistanceType?: string;
+  resistanceManagementAction?: string;
+  monitoringAlert?: string;
+  doseAdjustmentRecommendation?: string;
+  clinicalActionAlert?: string;
+
   biomarkers: {
     name: string;
     value: number;

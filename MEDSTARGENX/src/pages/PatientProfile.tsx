@@ -691,6 +691,84 @@ const PatientProfile = () => {
                   </div>
                 </div>
 
+                {/* Clinical Predictions */}
+                {(patient.drugAndDoseSuggestions || patient.predictedResponseProbability ||
+                  patient.pharmacogenomicStatus || patient.predictedToxicityType) && (
+                    <div>
+                      <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
+                        Clinical Predictions
+                      </h4>
+                      <div className="space-y-3">
+                        {patient.drugAndDoseSuggestions && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Drug & Dose</span>
+                            <span className="text-sm font-medium">{patient.drugAndDoseSuggestions}</span>
+                          </div>
+                        )}
+                        {patient.predictedResponseProbability !== undefined && patient.predictedResponseProbability > 0 && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Response Probability</span>
+                            <span className="font-medium">{(patient.predictedResponseProbability * 100).toFixed(1)}%</span>
+                          </div>
+                        )}
+                        {patient.pharmacogenomicStatus && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Pharmacogenomic Status</span>
+                            <span className="text-sm">{patient.pharmacogenomicStatus}</span>
+                          </div>
+                        )}
+                        {patient.predictedToxicityType && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Toxicity Type</span>
+                            <span className="text-sm">{patient.predictedToxicityType}</span>
+                          </div>
+                        )}
+                        {patient.adrs && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">ADRs</span>
+                            <span className="text-sm">{patient.adrs}</span>
+                          </div>
+                        )}
+                        {patient.contraindications && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Contraindications</span>
+                            <span className="text-sm">{patient.contraindications}</span>
+                          </div>
+                        )}
+                        {patient.predictedResistanceType && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Resistance Type</span>
+                            <span className="text-sm">{patient.predictedResistanceType}</span>
+                          </div>
+                        )}
+                        {patient.resistanceManagementAction && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Resistance Management</span>
+                            <span className="text-sm">{patient.resistanceManagementAction}</span>
+                          </div>
+                        )}
+                        {patient.monitoringAlert && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Monitoring Alert</span>
+                            <span className="text-sm">{patient.monitoringAlert}</span>
+                          </div>
+                        )}
+                        {patient.doseAdjustmentRecommendation && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Dose Adjustment</span>
+                            <span className="text-sm">{patient.doseAdjustmentRecommendation}</span>
+                          </div>
+                        )}
+                        {patient.clinicalActionAlert && (
+                          <div className="flex justify-between py-2 border-b border-border/30">
+                            <span className="text-sm text-muted-foreground">Clinical Action</span>
+                            <span className="text-sm">{patient.clinicalActionAlert}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
                 {/* Analysis timestamp */}
                 <div className="pt-4 border-t border-border/50">
                   <p className="text-xs text-muted-foreground text-center">

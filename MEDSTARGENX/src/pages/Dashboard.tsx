@@ -15,15 +15,33 @@ const Dashboard = () => {
   const handleDataLoaded = async (data: Patient[]) => {
     setPatients(data);
 
+    // DEBUG: Log first patient to check clinical fields
+    if (data.length > 0) {
+      console.log('=== PATIENT DATA DEBUG ===');
+      console.log('Total patients:', data.length);
+      console.log('First patient:', JSON.stringify(data[0], null, 2));
+      console.log('Drug and Dose:', data[0].drugAndDoseSuggestions);
+      console.log('Response Prob:', data[0].predictedResponseProbability);
+      console.log('Pharmacogenomic:', data[0].pharmacogenomicStatus);
+      console.log('===========================');
+    }
+
     // Save patients to database
     try {
       console.log('Attempting to save patients:', data.length);
       const result = await patientService.savePatients(data);
       console.log('Save result:', result);
+
       toast({
-        title: "Success",
-        description: `Saved ${data.length} patient${data.length > 1 ? 's' : ''} to database`,
+        title: "✓ Records Saved Successfully",
+        description: `${data.length} patient record${data.length > 1 ? 's' : ''} saved to database. View them in Patient Records.`,
       });
+
+      // Optional: Automatically navigate to Patient Records after a delay
+      setTimeout(() => {
+        window.location.href = '/records';
+      }, 2000);
+
     } catch (error: any) {
       console.error('Error saving patients:', error);
       console.error('Error message:', error.message);
@@ -36,8 +54,8 @@ const Dashboard = () => {
       }
 
       toast({
-        title: "Warning",
-        description: error.message || "Predictions displayed but not saved to database",
+        title: "❌ Failed to Save Records",
+        description: error.response?.data?.message || error.message || "Could not save patients to database. Please try again.",
         variant: "destructive"
       });
     }

@@ -12,7 +12,9 @@ import {
   TrendingUp,
   ChevronRight,
   SlidersHorizontal,
-  Loader2
+  Loader2,
+  Trash2,
+  ArrowUpDown
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Patient } from '@/types/patient';
@@ -25,7 +27,9 @@ const PatientRecords = () => {
   const [patients, setPatients] = useState<Patient[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterStatus, setFilterStatus] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<'date' | 'name' | 'risk'>('date');
   const [isLoading, setIsLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // Fetch patients from API
   useEffect(() => {
@@ -52,7 +56,61 @@ const PatientRecords = () => {
     }
   };
 
-  const filteredPatients = patients;
+  // Delete patient handler
+  const handleDeletePatient = async (patientId: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent navigation
+
+    if (!confirm('Are you sure you want to delete this patient record? This action cannot be undone.')) {
+      return;
+    }
+
+    setDeletingId(patientId);
+    try {
+      await patientService.deletePatient(patientId);
+      toast({
+        title: "Success",
+        description: "Patient record deleted successfully",
+      });
+      // Refresh patient list
+      fetchPatients();
+    } catch (error) {
+      console.error('Error deleting patient:', error);
+      toast({
+        title: "Error",
+        description: "Failed to delete patient record",
+        variant: "destructive"
+      });
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
+  // Sort patients
+  const sortedPatients = [...patients].sort((a, b) => {
+    switch (sortBy) {
+      case 'date':
+        // Use MongoDB _id timestamp or createdAt if available
+        const getTimestamp = (p: any) => {
+          if (p.createdAt) return new Date(p.createdAt).getTime();
+          if (p.uploadDate) return new Date(p.uploadDate).getTime();
+          if (p._id) {
+            // Extract timestamp from MongoDB ObjectId (first 8 chars = hex timestamp)
+            const timestamp = parseInt(p._id.toString().substring(0, 8), 16);
+            return timestamp * 1000; // Convert to milliseconds
+          }
+          return new Date(p.lastAnalysis).getTime();
+        };
+        return getTimestamp(b) - getTimestamp(a);
+      case 'name':
+        return a.name.localeCompare(b.name);
+      case 'risk':
+        return b.riskScore - a.riskScore;
+      default:
+        return 0;
+    }
+  });
+
+  const filteredPatients = sortedPatients;
 
   const getStatusVariant = (status: Patient['status']) => {
     switch (status) {
@@ -196,6 +254,18 @@ const PatientRecords = () => {
                   <h2 className="text-xl font-semibold">All Records</h2>
                   <p className="text-sm text-muted-foreground">{filteredPatients.length} patients found</p>
                 </div>
+                <div className="flex items-center gap-2">
+                  <ArrowUpDown className="w-4 h-4 text-muted-foreground" />
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as 'date' | 'name' | 'risk')}
+                    className="px-3 py-2 rounded-lg bg-card border border-border text-sm cursor-pointer hover:bg-muted/50 transition-colors"
+                  >
+                    <option value="date">Sort by Date (Newest)</option>
+                    <option value="name">Sort by Name (A-Z)</option>
+                    <option value="risk">Sort by Risk Score (High-Low)</option>
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -243,6 +313,19 @@ const PatientRecords = () => {
                           <Badge variant={getStatusVariant(patient.status)} className="px-4 py-2">
                             {patient.status}
                           </Badge>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-destructive hover:text-destructive hover:bg-destructive/10"
+                            onClick={(e) => handleDeletePatient(patientId, e)}
+                            disabled={deletingId === patientId}
+                          >
+                            {deletingId === patientId ? (
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                            ) : (
+                              <Trash2 className="w-5 h-5" />
+                            )}
+                          </Button>
                           <ChevronRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                       </div>

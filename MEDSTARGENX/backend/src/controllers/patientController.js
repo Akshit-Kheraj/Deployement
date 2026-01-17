@@ -238,7 +238,7 @@ const updatePatient = async (req, res) => {
 const deletePatient = async (req, res) => {
     try {
         const patient = await Patient.findOneAndDelete({
-            _id: req.params.id,
+            patientId: req.params.id,  // Use patientId field (like "P001"), not MongoDB _id
             uploadedBy: req.user._id
         });
 

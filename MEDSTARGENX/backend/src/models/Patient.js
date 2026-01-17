@@ -87,6 +87,52 @@ const patientSchema = new mongoose.Schema({
         enum: ['Low Risk', 'Moderate Risk', 'High Risk', 'Very High Risk'],
         required: true
     },
+    // Clinical Prediction Fields (from Hybrid ML System)
+    drugAndDoseSuggestions: {
+        type: String,
+        trim: true
+    },
+    predictedResponseProbability: {
+        type: Number,
+        min: 0,
+        max: 1
+    },
+    pharmacogenomicStatus: {
+        type: String,
+        trim: true
+    },
+    predictedToxicityType: {
+        type: String,
+        trim: true
+    },
+    adrs: {
+        type: String,
+        trim: true
+    },
+    contraindications: {
+        type: String,
+        trim: true
+    },
+    predictedResistanceType: {
+        type: String,
+        trim: true
+    },
+    resistanceManagementAction: {
+        type: String,
+        trim: true
+    },
+    monitoringAlert: {
+        type: String,
+        trim: true
+    },
+    doseAdjustmentRecommendation: {
+        type: String,
+        trim: true
+    },
+    clinicalActionAlert: {
+        type: String,
+        trim: true
+    },
     biomarkers: [biomarkerSchema],
     modelProbabilities: modelProbabilitiesSchema,
     recommendations: [{

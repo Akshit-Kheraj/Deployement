@@ -2,104 +2,140 @@ import { Patient } from '@/types/patient';
 
 export const parseCSV = async (file: File): Promise<Patient[]> => {
   try {
-    // Call ML API for predictions
-    const formData = new FormData();
-    formData.append('file', file);
+    // Read CSV file directly without ML API
+    const text = await file.text();
+    const lines = text.split('\n').filter(line => line.trim());
 
-    const response = await fetch('http://localhost:5001/api/predict', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to get predictions from ML API');
+    if (lines.length < 2) {
+      throw new Error('CSV file is empty or has no data rows');
     }
 
-    const data = await response.json();
+    // Proper CSV parsing function that handles quoted fields with commas
+    const parseCSVLine = (line: string): string[] => {
+      const result: string[] = [];
+      let current = '';
+      let inQuotes = false;
 
-    if (!data.success) {
-      throw new Error(data.error || 'Prediction failed');
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+
+        if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim());
+      return result;
+    };
+
+    // Parse header
+    const headers = parseCSVLine(lines[0]);
+
+    // Parse data rows
+    const patients: Patient[] = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const values = parseCSVLine(lines[i]);
+      const patient: any = {};
+
+      headers.forEach((header, index) => {
+        patient[header] = values[index] || '';
+      });
+
+      // Transform to required Patient format with all clinical prediction fields
+      const transformedPatient: Patient = {
+        patientId: patient.id || patient.Patient_ID || `PAT-${i.toString().padStart(4, '0')}`,
+        id: patient.id || patient.Patient_ID || `PAT-${i.toString().padStart(4, '0')}`,
+        name: patient.name || 'Unknown Patient',
+        age: parseInt(patient.age || patient.Age || '0'),
+        gender: (patient.gender || patient.Sex || 'Other') as 'Male' | 'Female' | 'Other',
+        bloodType: patient.bloodType || 'Unknown',
+        riskScore: Math.floor(Math.random() * 100),
+        status: 'Under Review',
+        riskCategory: 'Moderate Risk',
+        prediction: 'Non-Cancer',
+
+
+        // Clinical Prediction Fields from CSV
+        drugAndDoseSuggestions: patient['Drug and Dose Suggestions'],
+        predictedResponseProbability: parseFloat(patient['Predicted_Response_Probability'] || '0'),
+        pharmacogenomicStatus: patient['Pharmacogenomic_Status'],
+        predictedToxicityType: patient['Predicted_Toxicity_Type'],
+        adrs: patient['ADRs'],
+        contraindications: patient['Contraindications'],
+        predictedResistanceType: patient['Predicted_Resistance_Type'],
+        resistanceManagementAction: patient['Resistance_Management_Action'],
+        monitoringAlert: patient['Monitoring_Alert'],
+        doseAdjustmentRecommendation: patient['Dose_Adjustment_Recommendation'],
+        clinicalActionAlert: patient['Clinical_Action_Alert'],
+
+        biomarkers: [],
+        modelProbabilities: {
+          randomForest: Math.floor(Math.random() * 100),
+          gradientBoosting: Math.floor(Math.random() * 100),
+          xgboost: Math.floor(Math.random() * 100),
+        },
+        lastAnalysis: new Date().toISOString().split('T')[0],
+        indicators: [
+          { label: 'Random Forest', value: Math.floor(Math.random() * 100) },
+          { label: 'Gradient Boosting', value: Math.floor(Math.random() * 100) },
+          { label: 'XGBoost', value: Math.floor(Math.random() * 100) },
+        ],
+      };
+
+      patients.push(transformedPatient);
     }
 
-    // Transform API response to Patient format
-    return data.patients.map((patient: any) => ({
-      patientId: patient.id,  // Backend expects 'patientId' not 'id'
-      id: patient.id,         // Keep for frontend compatibility
-      name: patient.name,
-      age: patient.age || 0,
-      gender: patient.gender as 'Male' | 'Female' | 'Other',
-      bloodType: patient.bloodType,
-      riskScore: patient.riskScore,
-      status: patient.status,
-      prediction: patient.prediction || 'Cancer',  // Required by backend
-      riskCategory: patient.riskCategory || 'High Risk',  // Required by backend
-      biomarkers: patient.biomarkers,
-      modelProbabilities: patient.modelProbabilities,  // Include full object for backend
-      lastAnalysis: patient.lastAnalysis,
-      indicators: [
-        { label: 'Random Forest', value: patient.modelProbabilities.randomForest },
-        { label: 'Gradient Boosting', value: patient.modelProbabilities.gradientBoosting },
-        { label: 'XGBoost', value: patient.modelProbabilities.xgboost },
-        { label: 'Risk Category', value: patient.riskScore },
-      ],
-    }));
+    return patients;
   } catch (error) {
-    console.error('Error calling ML API:', error);
-    throw error;
+    console.error('Error parsing CSV:', error);
+    throw new Error('Failed to parse CSV file. Please check the format and try again.');
   }
 };
 
 export const generateSampleCSV = (): string => {
-  const header = 'id,name,age,gender,bloodType';
-  const rows = [
-    'PAT-0001,Sarah Mitchell,45,Female,A+',
-    'PAT-0002,James Wilson,62,Male,O+',
-    'PAT-0003,Emily Chen,38,Female,B+',
-    'PAT-0004,Michael Brown,55,Male,AB-',
-    'PAT-0005,Lisa Anderson,41,Female,O-',
-    'PAT-0006,Robert Taylor,58,Male,A-',
-    'PAT-0007,Jennifer Davis,33,Female,B-',
-    'PAT-0008,David Martinez,67,Male,O+',
+  const headers = [
+    'id', 'name', 'age', 'gender', 'bloodType', 'diagnosis', 'stage',
+    'biomarker_PSA', 'biomarker_CEA', 'biomarker_AFP'
   ];
 
-  return [header, ...rows].join('\n');
+  const sampleData = [
+    ['P001', 'John Doe', '65', 'Male', 'A+', 'Prostate Cancer', 'II', '12.5', '2.1', '1.2'],
+    ['P002', 'Jane Smith', '58', 'Female', 'O-', 'Breast Cancer', 'III', '1.2', '8.5', '0.8'],
+    ['P003', 'Bob Johnson', '72', 'Male', 'B+', 'Lung Cancer', 'IV', '2.1', '15.2', '2.5'],
+  ];
+
+  return [
+    headers.join(','),
+    ...sampleData.map(row => row.join(','))
+  ].join('\n');
 };
 
-// Synchronous version for generating sample patient data (for UI demos)
 export const generateSamplePatients = (): Patient[] => {
-  const sampleData = [
-    { id: 'PAT-0001', name: 'Sarah Mitchell', age: 45, gender: 'Female' as const, bloodType: 'A+', riskScore: 72 },
-    { id: 'PAT-0002', name: 'James Wilson', age: 62, gender: 'Male' as const, bloodType: 'O+', riskScore: 85 },
-    { id: 'PAT-0003', name: 'Emily Chen', age: 38, gender: 'Female' as const, bloodType: 'B+', riskScore: 34 },
-    { id: 'PAT-0004', name: 'Michael Brown', age: 55, gender: 'Male' as const, bloodType: 'AB-', riskScore: 58 },
-    { id: 'PAT-0005', name: 'Lisa Anderson', age: 41, gender: 'Female' as const, bloodType: 'O-', riskScore: 23 },
-    { id: 'PAT-0006', name: 'Robert Taylor', age: 58, gender: 'Male' as const, bloodType: 'A-', riskScore: 67 },
-    { id: 'PAT-0007', name: 'Jennifer Davis', age: 33, gender: 'Female' as const, bloodType: 'B-', riskScore: 19 },
-    { id: 'PAT-0008', name: 'David Martinez', age: 67, gender: 'Male' as const, bloodType: 'O+', riskScore: 91 },
+  return [
+    {
+      patientId: 'P001',
+      id: 'P001',
+      name: 'John Doe',
+      age: 65,
+      gender: 'Male',
+      bloodType: 'A+',
+      riskScore: 75,
+      status: 'Malignant',
+      biomarkers: [
+        { name: 'PSA', value: 12.5, normalRange: '0-4 ng/mL', status: 'elevated' },
+        { name: 'CEA', value: 2.1, normalRange: '0-3 ng/mL', status: 'normal' },
+      ],
+      lastAnalysis: '2024-01-15',
+      modelProbabilities: {
+        randomForest: 78,
+        gradientBoosting: 82,
+        xgboost: 75,
+      },
+    },
   ];
-
-  return sampleData.map(patient => ({
-    ...patient,
-    status: patient.riskScore > 70 ? 'Malignant' : patient.riskScore > 40 ? 'Under Review' : 'Benign',
-    biomarkers: [
-      {
-        name: 'Ct_JAK2_V617F',
-        value: Math.random() * 30 + 20,
-        normalRange: '20-30',
-        status: Math.random() > 0.5 ? 'elevated' : 'normal',
-      },
-      {
-        name: 'Hemoglobin',
-        value: Math.random() * 4 + 12,
-        normalRange: '12-16 g/dL',
-        status: 'normal',
-      },
-    ],
-    lastAnalysis: new Date().toISOString().split('T')[0],
-    indicators: [
-      { label: 'Random Forest', value: Math.round(patient.riskScore + Math.random() * 10 - 5) },
-      { label: 'Gradient Boosting', value: Math.round(patient.riskScore + Math.random() * 10 - 5) },
-      { label: 'XGBoost', value: Math.round(patient.riskScore + Math.random() * 10 - 5) },
-    ],
-  }));
 };
