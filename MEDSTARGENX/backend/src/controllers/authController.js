@@ -150,6 +150,8 @@ const login = async (req, res) => {
                     name: user.name,
                     email: user.email,
                     role: user.role,
+                    userType: user.userType,
+                    isApproved: user.isApproved,
                 },
                 accessToken,
                 refreshToken,
@@ -182,6 +184,8 @@ const getCurrentUser = async (req, res) => {
                     name: user.name,
                     email: user.email,
                     role: user.role,
+                    userType: user.userType,
+                    isApproved: user.isApproved,
                     createdAt: user.createdAt,
                     lastLogin: user.lastLogin,
                 },
@@ -229,6 +233,7 @@ const updateProfile = async (req, res) => {
                     name: user.name,
                     email: user.email,
                     role: user.role,
+                    userType: user.userType,
                 },
             },
         });
@@ -310,6 +315,52 @@ const refreshToken = async (req, res) => {
         });
     }
 };
+/**
+ * @desc    Change user password
+ * @route   PUT /api/auth/change-password
+ * @access  Private
+ */
+const changePassword = async (req, res) => {
+    try {
+        const { currentPassword, newPassword } = req.body;
+
+        // Get user with password field
+        const user = await User.findById(req.user.id).select('+password');
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found',
+            });
+        }
+
+        // Verify current password
+        const isPasswordValid = await user.comparePassword(currentPassword);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({
+                success: false,
+                message: 'Current password is incorrect',
+            });
+        }
+
+        // Update password (will be hashed by pre-save middleware)
+        user.password = newPassword;
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            message: 'Password changed successfully',
+        });
+    } catch (error) {
+        console.error('Change password error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error changing password',
+            error: error.message,
+        });
+    }
+};
 
 module.exports = {
     register,
@@ -318,4 +369,5 @@ module.exports = {
     updateProfile,
     logout,
     refreshToken,
+    changePassword,
 };
