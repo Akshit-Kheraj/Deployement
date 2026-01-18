@@ -116,9 +116,14 @@ const Auth = () => {
         // Wait a bit then switch to login
         setTimeout(() => setIsSignUp(false), 2000);
       } else {
-        await login(formData.email, formData.password);
-        // After successful login, navigate to dashboard
-        navigate('/dashboard');
+        const loggedInUser = await login(formData.email, formData.password);
+        // After successful login, check user type and navigate accordingly
+        // Admin users go to admin panel, doctors go to dashboard
+        if (loggedInUser?.userType === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/dashboard');
+        }
       }
     } catch (error: any) {
       // Error toast is already shown by AuthContext
